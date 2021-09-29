@@ -1,0 +1,20 @@
+apiVersion: skaffold/v2beta17
+kind: Config
+metadata:
+  name: ticketing-skaffold
+build:
+  local:
+    push: false
+  artifacts:
+  - image: buncolak/ticket-auth
+    context: auth
+    docker:
+      dockerfile: Dockerfile
+    sync:
+      manual:
+        - dest: .
+          src: src/**/*.ts
+deploy:
+  kubectl:
+    manifests:
+      - ./infra/k8s/*
