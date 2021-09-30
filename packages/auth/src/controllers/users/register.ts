@@ -1,7 +1,7 @@
+import ApiValidationError from '@buncolak/ticketing-commons/errors/ApiValidationError'
 import * as bcrypt from 'bcrypt'
 import { RequestHandler } from 'express'
 import { validationResult } from 'express-validator'
-import ApiValidationError from '../../errors/ApiValidationError'
 import UserModel from '../../models/user'
 
 const register: RequestHandler<{}, {}, { username: string, password: string }> = async (req, res) => {

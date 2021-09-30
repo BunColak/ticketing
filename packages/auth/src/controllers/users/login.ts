@@ -1,12 +1,12 @@
+import ApiValidationError from '@buncolak/ticketing-commons/errors/ApiValidationError'
+import BadRequest from '@buncolak/ticketing-commons/errors/BadRequest'
+import NotFoundError from '@buncolak/ticketing-commons/errors/NotFoundError'
 import * as bcrypt from 'bcrypt'
 import { RequestHandler } from 'express'
 import { validationResult } from 'express-validator'
 import * as jwt from 'jsonwebtoken'
-import ApiValidationError from '../../errors/ApiValidationError'
-import BadRequest from '../../errors/BadRequest'
-import NotFoundError from '../../errors/NotFoundError'
-import UserModel from '../../models/user'
 import { LoginPayload, LoginResponse, TokenPayload } from '../../types'
+import UserModel from '../models/user'
 
 const login: RequestHandler<{}, LoginResponse, LoginPayload> = async (req, res) => {
   const errors = validationResult(req)

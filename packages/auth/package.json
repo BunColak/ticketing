@@ -1,5 +1,5 @@
 {
-  "name": "auth",
+  "name": "@buncolak/ticketing-auth",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -7,6 +7,7 @@
     "start": "ts-node-dev --poll src/index"
   },
   "dependencies": {
+    "@buncolak/ticketing-commons": "^1.0.0",
     "bcrypt": "^5.0.1",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",

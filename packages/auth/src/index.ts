@@ -1,7 +1,7 @@
+import errorHandler from '@buncolak/ticketing-commons/middlewares/errors'
 import express from 'express'
 import 'express-async-errors'
 import mongoose from 'mongoose'
-import errorHandler from './middlewares/errors'
 import usersRouter from './router/user'
 const PORT = process.env.PORT || 3000
 

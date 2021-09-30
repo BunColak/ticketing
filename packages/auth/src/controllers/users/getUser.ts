@@ -1,7 +1,7 @@
+import ApiValidationError from '@buncolak/ticketing-commons/errors/ApiValidationError'
+import NotFoundError from '@buncolak/ticketing-commons/errors/NotFoundError'
 import { RequestHandler } from 'express'
 import { validationResult } from 'express-validator'
-import ApiValidationError from '../../errors/ApiValidationError'
-import NotFoundError from '../../errors/NotFoundError'
 import UserModel from '../../models/user'
 
 const getUser: RequestHandler<{ username: string }> = async (req, res) => {

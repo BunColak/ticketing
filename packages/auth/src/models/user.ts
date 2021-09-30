@@ -1,5 +1,5 @@
+import UniqueKeyError from '@buncolak/ticketing-commons/errors/UniqueKeyError'
 import { model, Schema } from 'mongoose'
-import UniqueKeyError from '../errors/UniqueKeyError'
 import type { IUser } from '../types'
 
 const userSchema = new Schema<IUser>({
