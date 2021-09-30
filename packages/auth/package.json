@@ -29,5 +29,6 @@
     "eslint-plugin-promise": "^4.2.1",
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.4.3"
-  }
+  },
+  "gitHead": "42c0df00bb132f66e78a61ef6ca0396380b377c4"
 }

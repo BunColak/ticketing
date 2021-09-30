@@ -2,5 +2,6 @@
   "name": "@buncolak/ticketing-commons",
   "version": "0.0.1-alpha.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "gitHead": "42c0df00bb132f66e78a61ef6ca0396380b377c4"
 }
