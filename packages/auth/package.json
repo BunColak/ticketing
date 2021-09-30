@@ -1,13 +1,13 @@
 {
   "name": "@buncolak/ticketing-auth",
-  "version": "1.0.0",
+  "version": "0.0.1-alpha.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "start": "ts-node-dev --poll src/index"
   },
   "dependencies": {
-    "@buncolak/ticketing-commons": "^1.0.0",
+    "@buncolak/ticketing-commons": "^0.0.1-alpha.0",
     "bcrypt": "^5.0.1",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
