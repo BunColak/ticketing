@@ -1,22 +1,23 @@
 import express from 'express'
+import 'express-async-errors'
 import mongoose from 'mongoose'
+import errorHandler from './middlewares/errors'
 import usersRouter from './router/user'
+const PORT = process.env.PORT || 3000
 
 const app = express()
 app.use(express.json())
-
-const PORT = process.env.PORT || 3000
-
 app.use('/users', usersRouter)
-
 app.get('/', (req, res) => {
   return res.json({
     ok: true
   })
 })
+app.use(errorHandler)
 
 async function main () {
   await mongoose.connect(`mongodb://${process.env.MONGO_HOST}:27017/ticketing`)
+
   app.listen(PORT, () => {
     console.log('Started on ' + PORT)
   })
