@@ -2,8 +2,5 @@
   "name": "@buncolak/ticketing-commons",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT",
-  "dependencies": {
-    "commons": "^0.0.1-pre"
-  }
+  "license": "MIT"
 }
