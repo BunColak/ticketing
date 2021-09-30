@@ -1,0 +1,25 @@
+version: '3.4'
+
+networks:
+  ticketing-auth:
+    driver: bridge
+
+services:
+  auth:
+    image: auth
+    build:
+      dockerfile: ./Dockerfile
+    environment:
+      MONGO_HOST: mongo
+    volumes:
+      - ./src:/app/src
+    networks:
+      - ticketing-auth
+    depends_on:
+      - "mongo"
+    ports:
+      - 3000:3000
+  mongo:
+    image: bitnami/mongodb
+    networks:
+      - ticketing-auth
