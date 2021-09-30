@@ -6,6 +6,7 @@ function errorHandler (error: Error, req: Request, res: Response, next: NextFunc
   if (error instanceof ApiValidationError) {
     return res.status(error.code).json({ errors: error.reasons })
   }
+
   if (error instanceof ApiError) {
     return res.status(error.code).json({ errors: [{ message: error.message }] })
   }
