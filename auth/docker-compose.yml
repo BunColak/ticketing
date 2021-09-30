@@ -3,6 +3,9 @@ version: '3.4'
 networks:
   ticketing-auth:
     driver: bridge
+  web:
+    external: true
+
 
 services:
   auth:
@@ -15,10 +18,17 @@ services:
       - ./src:/app/src
     networks:
       - ticketing-auth
+      - web
     depends_on:
       - "mongo"
     ports:
       - 3000:3000
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.auth.rule=Host(`ticketing.localhost`) && PathPrefix(`/users`)"
+      - "traefik.http.routers.auth.entrypoints=web"
+      - "traefik.http.services.auth.loadbalancer.server.port=3000"
+      - "traefik.docker.network=web"
   mongo:
     image: bitnami/mongodb
     networks:

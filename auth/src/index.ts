@@ -8,11 +8,6 @@ const PORT = process.env.PORT || 3000
 const app = express()
 app.use(express.json())
 app.use('/users', usersRouter)
-app.get('/', (req, res) => {
-  return res.json({
-    ok: true
-  })
-})
 app.use(errorHandler)
 
 async function main () {
